@@ -1,0 +1,29 @@
+{
+  "issuer": "ANPR",
+  "desc": "A very big and italian data borner.",
+  "website": "https://servizi2.inps.it/servizi/areariservata/SH/getUserFunctionalities",
+  "APIs": [
+    {
+      "host": "servizi2.inps.it",
+      "intercept": {
+        "url": "servizi/areariservata/SH/getUserFunctionalities",
+        "method": "GET"
+      },
+      "assert": [
+        {
+          "key": "oData|user|sNome",
+          "value": "CIEUser",
+          "operation": "!=",
+          "isPublic": true
+        }
+      ],
+      "nullifier": "oData|user|sNome"
+    }
+  ],
+  "HRCondition": [
+    "ANPR"
+  ],
+  "tips": {
+    "message": "Log in into your ANPR account and then click the 'Start' button to initiate the verification process."
+  }
+}
